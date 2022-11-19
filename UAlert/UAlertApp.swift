@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Pulse
+import Logging
 
 @main
 struct UAlertApp: App {
     var body: some Scene {
+        let _ = LoggingSystem.bootstrap(PersistentLogHandler.init)
+        let _ = URLSessionProxyDelegate.enableAutomaticRegistration()
+
         WindowGroup {
             ContentView()
         }

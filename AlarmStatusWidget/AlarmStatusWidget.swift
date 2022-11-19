@@ -7,45 +7,55 @@
 
 import WidgetKit
 import SwiftUI
+import UkraineAlertAPI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+struct Provider: IntentTimelineProvider {
+    func placeholder(in context: Context) -> AlarmEntry {
+        AlarmEntry(date: Date(), status: AlertRegionModel())
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    func getSnapshot(for configuration: AlarmStatusWidgetConfigIntent, in context: Context, completion: @escaping (AlarmEntry) -> ()) {
+        var status = AlertRegionModel()
+
+        if (context.isPreview) {
+            status.regionName = "м. Київ"
+            status.lastUpdate = Calendar.current.date(byAdding: .year, value: -10, to: Date.now)
+        }
+        
+        let entry = AlarmEntry(date: Date(), status: status)
+
         completion(entry)
     }
+    
+    func getTimeline(for configuration: AlarmStatusWidgetConfigIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        Task {
+            let regionStatusResponse = try await Client.shared.send(Paths.alerts.regionID(configuration.region!.identifier!).get)
+            let regionStatus = regionStatusResponse.value.last!
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+            let currentDate = Date.now
+            let nextDate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
+            let timeline = Timeline(
+                entries: [AlarmEntry(date: currentDate, status: regionStatus)],
+                policy: .after(nextDate)
+            )
+            
+            completion(timeline)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct AlarmEntry: TimelineEntry {
     let date: Date
+    let status: AlertRegionModel
 }
 
 struct AlarmStatusWidgetEntryView : View {
-    var entry: Provider.Entry
-
+    var entry: AlarmEntry
+    
     var body: some View {
         AlarmStatusWidgetView(
-            status: .calm,
-            startDate: Date(),
-            lastDate: Calendar.current.date(byAdding: .minute, value: -300, to: Date.now)!
+            status: entry.status
         )
     }
 }
@@ -55,17 +65,22 @@ struct AlarmStatusWidget: Widget {
     let kind: String = "AlarmStatusWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        IntentConfiguration(
+            kind: kind,
+            intent: AlarmStatusWidgetConfigIntent.self,
+            provider: Provider()
+        ) { entry in
             AlarmStatusWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Air alarm status")
         .description("Check air alarm status changes in your location.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
-struct AlarmStatusWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        AlarmStatusWidgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
-}
+//struct AlarmStatusWidget_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AlarmStatusWidgetEntryView(entry: SimpleEntry(date: Date(), status: nil))
+//            .previewContext(WidgetPreviewContext(family: .systemSmall))
+//    }
+//}
