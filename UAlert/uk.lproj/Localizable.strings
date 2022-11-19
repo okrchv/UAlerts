@@ -5,8 +5,12 @@
   Created by Oleh Kiurchev on 24.07.2022.
   
 */
-"Air \nalarm" = "Повітряна \nтривога";
+"Air\nalarm" = "Повітряна\nтривога";
 "Started at %@" = "Початок %@";
-"Everything  \nis calm" = "Все \nспокійно";
+"Everything\nis calm" = "Все\nспокійно";
 "without air alarms" = "без тривог";
 "end of the last alarm" = "відбій останньої тривоги";
+"out of data\nabout last alarm" = "немає даних\nпро останню тривогу";
+"Shelters map" = "Мапа укриттів";
+"min to the nearest shelter" = "хв до найближчого укриття";
+"alarms\nnow in Ukraine" = "тривог\nзараз в Україні";

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50177DCC28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 50177DCB28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition */; };
+		50177DCD28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 50177DCB28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition */; };
+		50177DD528B3B8BC006AD6CD /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50177DD428B3B8BC006AD6CD /* Intents.framework */; };
+		50177DD828B3B8BC006AD6CD /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50177DD728B3B8BC006AD6CD /* IntentHandler.swift */; };
+		50177DDC28B3B8BC006AD6CD /* UAlertIntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 50177DD328B3B8BC006AD6CD /* UAlertIntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50177DE028B3BF16006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 50177DCB28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition */; };
+		50177DE228B3FDC6006AD6CD /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 50177DE128B3FDC6006AD6CD /* UkraineAlertAPI */; };
+		50177DE428C21583006AD6CD /* AlarmStatusMediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50177DE328C21583006AD6CD /* AlarmStatusMediumWidgetView.swift */; };
+		50177DE528C24A40006AD6CD /* AlarmStatusMediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50177DE328C21583006AD6CD /* AlarmStatusMediumWidgetView.swift */; };
 		5038556D2889766600930222 /* UAlertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038556C2889766600930222 /* UAlertApp.swift */; };
 		5038556F2889766600930222 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038556E2889766600930222 /* ContentView.swift */; };
 		503855712889766900930222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503855702889766900930222 /* Assets.xcassets */; };
@@ -24,9 +33,29 @@
 		503855A0288ED6FB00930222 /* AlarmWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038559E288ED6FB00930222 /* AlarmWidgetView.swift */; };
 		503855A2288ED84300930222 /* CalmWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503855A1288ED84300930222 /* CalmWidgetView.swift */; };
 		503855A3288ED84300930222 /* CalmWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503855A1288ED84300930222 /* CalmWidgetView.swift */; };
+		5041AA74289AAAD800677DA5 /* UkraineAlertAPI in Resources */ = {isa = PBXBuildFile; fileRef = 5041AA73289AAAD800677DA5 /* UkraineAlertAPI */; };
+		5041AA75289AAAD800677DA5 /* UkraineAlertAPI in Resources */ = {isa = PBXBuildFile; fileRef = 5041AA73289AAAD800677DA5 /* UkraineAlertAPI */; };
+		5041AA77289AAB2300677DA5 /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5041AA76289AAB2300677DA5 /* UkraineAlertAPI */; };
+		5041AA79289AAB6600677DA5 /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5041AA78289AAB6600677DA5 /* UkraineAlertAPI */; };
+		5063BE162901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
+		5063BE172901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
+		5063BE182901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
+		506A944629143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
+		506A944729143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
+		506A944829143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
+		50DDC005289C154A00E8E8E7 /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 50DDC004289C154A00E8E8E7 /* Pulse */; };
+		50DDC007289C154A00E8E8E7 /* PulseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 50DDC006289C154A00E8E8E7 /* PulseCore */; };
+		50DDC009289C154A00E8E8E7 /* PulseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50DDC008289C154A00E8E8E7 /* PulseUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		50177DDA28B3B8BC006AD6CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503855612889766600930222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50177DD228B3B8BC006AD6CD;
+			remoteInfo = UAlertIntentExtension;
+		};
 		5038558C2889786A00930222 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 503855612889766600930222 /* Project object */;
@@ -44,6 +73,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				5038558E2889786A00930222 /* AlarmStatusWidgetExtension.appex in Embed App Extensions */,
+				50177DDC28B3B8BC006AD6CD /* UAlertIntentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +81,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		50177DCB28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = AlarmStatusWidgetConfig.intentdefinition; sourceTree = "<group>"; };
+		50177DD328B3B8BC006AD6CD /* UAlertIntentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UAlertIntentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		50177DD428B3B8BC006AD6CD /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		50177DD728B3B8BC006AD6CD /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		50177DD928B3B8BC006AD6CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50177DE328C21583006AD6CD /* AlarmStatusMediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmStatusMediumWidgetView.swift; sourceTree = "<group>"; };
 		503855692889766600930222 /* UAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5038556C2889766600930222 /* UAlertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAlertApp.swift; sourceTree = "<group>"; };
 		5038556E2889766600930222 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,13 +103,30 @@
 		5038559B288DD4E900930222 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5038559E288ED6FB00930222 /* AlarmWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWidgetView.swift; sourceTree = "<group>"; };
 		503855A1288ED84300930222 /* CalmWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmWidgetView.swift; sourceTree = "<group>"; };
+		5041AA73289AAAD800677DA5 /* UkraineAlertAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UkraineAlertAPI; sourceTree = "<group>"; };
+		5063BE152901B15700B33D85 /* AlertsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsChartView.swift; sourceTree = "<group>"; };
+		506A944529143F0800AEF641 /* PollDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollDay.swift; sourceTree = "<group>"; };
+		50DDC00A289C173100E8E8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		50177DD028B3B8BC006AD6CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50177DE228B3FDC6006AD6CD /* UkraineAlertAPI in Frameworks */,
+				50177DD528B3B8BC006AD6CD /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		503855662889766600930222 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DDC007289C154A00E8E8E7 /* PulseCore in Frameworks */,
+				50DDC005289C154A00E8E8E7 /* Pulse in Frameworks */,
+				50DDC009289C154A00E8E8E7 /* PulseUI in Frameworks */,
+				5041AA77289AAB2300677DA5 /* UkraineAlertAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,17 +136,30 @@
 			files = (
 				503855852889786900930222 /* SwiftUI.framework in Frameworks */,
 				503855832889786900930222 /* WidgetKit.framework in Frameworks */,
+				5041AA79289AAB6600677DA5 /* UkraineAlertAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50177DD628B3B8BC006AD6CD /* UAlertIntentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				50177DD728B3B8BC006AD6CD /* IntentHandler.swift */,
+				50177DD928B3B8BC006AD6CD /* Info.plist */,
+			);
+			path = UAlertIntentExtension;
+			sourceTree = "<group>";
+		};
 		503855602889766600930222 = {
 			isa = PBXGroup;
 			children = (
+				50177DCB28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition */,
 				5038556B2889766600930222 /* UAlert */,
 				503855862889786900930222 /* AlarmStatusWidget */,
+				5041AA72289AAAD800677DA5 /* LocalPackages */,
+				50177DD628B3B8BC006AD6CD /* UAlertIntentExtension */,
 				503855812889786900930222 /* Frameworks */,
 				5038556A2889766600930222 /* Products */,
 			);
@@ -104,6 +170,7 @@
 			children = (
 				503855692889766600930222 /* UAlert.app */,
 				503855802889786900930222 /* AlarmStatusWidgetExtension.appex */,
+				50177DD328B3B8BC006AD6CD /* UAlertIntentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,8 +178,10 @@
 		5038556B2889766600930222 /* UAlert */ = {
 			isa = PBXGroup;
 			children = (
+				50DDC00A289C173100E8E8E7 /* Info.plist */,
 				5038556C2889766600930222 /* UAlertApp.swift */,
 				5038556E2889766600930222 /* ContentView.swift */,
+				506A944529143F0800AEF641 /* PollDay.swift */,
 				503855A4288EDAAE00930222 /* Views */,
 				503855702889766900930222 /* Assets.xcassets */,
 				503855722889766900930222 /* Preview Content */,
@@ -134,6 +203,7 @@
 			children = (
 				503855822889786900930222 /* WidgetKit.framework */,
 				503855842889786900930222 /* SwiftUI.framework */,
+				50177DD428B3B8BC006AD6CD /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,16 +221,46 @@
 		503855A4288EDAAE00930222 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5038557A2889779D00930222 /* AlarmStatusWidgetView.swift */,
-				503855A1288ED84300930222 /* CalmWidgetView.swift */,
 				5038559E288ED6FB00930222 /* AlarmWidgetView.swift */,
+				503855A1288ED84300930222 /* CalmWidgetView.swift */,
+				5063BE152901B15700B33D85 /* AlertsChartView.swift */,
+				5038557A2889779D00930222 /* AlarmStatusWidgetView.swift */,
+				50177DE328C21583006AD6CD /* AlarmStatusMediumWidgetView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5041AA72289AAAD800677DA5 /* LocalPackages */ = {
+			isa = PBXGroup;
+			children = (
+				5041AA73289AAAD800677DA5 /* UkraineAlertAPI */,
+			);
+			path = LocalPackages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		50177DD228B3B8BC006AD6CD /* UAlertIntentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50177DDD28B3B8BC006AD6CD /* Build configuration list for PBXNativeTarget "UAlertIntentExtension" */;
+			buildPhases = (
+				50177DCF28B3B8BC006AD6CD /* Sources */,
+				50177DD028B3B8BC006AD6CD /* Frameworks */,
+				50177DD128B3B8BC006AD6CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UAlertIntentExtension;
+			packageProductDependencies = (
+				50177DE128B3FDC6006AD6CD /* UkraineAlertAPI */,
+			);
+			productName = UAlertIntentExtension;
+			productReference = 50177DD328B3B8BC006AD6CD /* UAlertIntentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		503855682889766600930222 /* UAlert */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 503855772889766900930222 /* Build configuration list for PBXNativeTarget "UAlert" */;
@@ -174,8 +274,15 @@
 			);
 			dependencies = (
 				5038558D2889786A00930222 /* PBXTargetDependency */,
+				50177DDB28B3B8BC006AD6CD /* PBXTargetDependency */,
 			);
 			name = UAlert;
+			packageProductDependencies = (
+				5041AA76289AAB2300677DA5 /* UkraineAlertAPI */,
+				50DDC004289C154A00E8E8E7 /* Pulse */,
+				50DDC006289C154A00E8E8E7 /* PulseCore */,
+				50DDC008289C154A00E8E8E7 /* PulseUI */,
+			);
 			productName = "Air-raid Alarm";
 			productReference = 503855692889766600930222 /* UAlert.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +300,9 @@
 			dependencies = (
 			);
 			name = AlarmStatusWidgetExtension;
+			packageProductDependencies = (
+				5041AA78289AAB6600677DA5 /* UkraineAlertAPI */,
+			);
 			productName = AlarmStatusWidgetExtension;
 			productReference = 503855802889786900930222 /* AlarmStatusWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -207,6 +317,9 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					50177DD228B3B8BC006AD6CD = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					503855682889766600930222 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -222,23 +335,36 @@
 			knownRegions = (
 				en,
 				uk,
+				Base,
 			);
 			mainGroup = 503855602889766600930222;
+			packageReferences = (
+				50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */,
+			);
 			productRefGroup = 5038556A2889766600930222 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				503855682889766600930222 /* UAlert */,
 				5038557F2889786900930222 /* AlarmStatusWidgetExtension */,
+				50177DD228B3B8BC006AD6CD /* UAlertIntentExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		50177DD128B3B8BC006AD6CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		503855672889766600930222 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5041AA74289AAAD800677DA5 /* UkraineAlertAPI in Resources */,
 				503855742889766900930222 /* Preview Assets.xcassets in Resources */,
 				50385596288DD46600930222 /* Localizable.strings in Resources */,
 				503855712889766900930222 /* Assets.xcassets in Resources */,
@@ -251,12 +377,24 @@
 			files = (
 				5038558A2889786A00930222 /* Assets.xcassets in Resources */,
 				50385597288DD46600930222 /* Localizable.strings in Resources */,
+				5041AA75289AAAD800677DA5 /* UkraineAlertAPI in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		50177DCF28B3B8BC006AD6CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50177DE028B3BF16006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */,
+				50177DD828B3B8BC006AD6CD /* IntentHandler.swift in Sources */,
+				506A944829143F0800AEF641 /* PollDay.swift in Sources */,
+				5063BE182901B15700B33D85 /* AlertsChartView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		503855652889766600930222 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,7 +402,11 @@
 				5038556F2889766600930222 /* ContentView.swift in Sources */,
 				503855A2288ED84300930222 /* CalmWidgetView.swift in Sources */,
 				5038557B2889779D00930222 /* AlarmStatusWidgetView.swift in Sources */,
+				5063BE162901B15700B33D85 /* AlertsChartView.swift in Sources */,
 				5038559F288ED6FB00930222 /* AlarmWidgetView.swift in Sources */,
+				50177DE428C21583006AD6CD /* AlarmStatusMediumWidgetView.swift in Sources */,
+				506A944629143F0800AEF641 /* PollDay.swift in Sources */,
+				50177DCC28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */,
 				5038556D2889766600930222 /* UAlertApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,14 +417,23 @@
 			files = (
 				5038559C288DECB200930222 /* AlarmStatusWidgetView.swift in Sources */,
 				503855A0288ED6FB00930222 /* AlarmWidgetView.swift in Sources */,
+				506A944729143F0800AEF641 /* PollDay.swift in Sources */,
 				503855882889786900930222 /* AlarmStatusWidget.swift in Sources */,
+				5063BE172901B15700B33D85 /* AlertsChartView.swift in Sources */,
+				50177DCD28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */,
 				503855A3288ED84300930222 /* CalmWidgetView.swift in Sources */,
+				50177DE528C24A40006AD6CD /* AlarmStatusMediumWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		50177DDB28B3B8BC006AD6CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50177DD228B3B8BC006AD6CD /* UAlertIntentExtension */;
+			targetProxy = 50177DDA28B3B8BC006AD6CD /* PBXContainerItemProxy */;
+		};
 		5038558D2889786A00930222 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5038557F2889786900930222 /* AlarmStatusWidgetExtension */;
@@ -303,6 +454,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		50177DDE28B3B8BC006AD6CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N769D7USYT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UAlertIntentExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UAlertIntentExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.okrchv.ualerts.UAlertIntentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50177DDF28B3B8BC006AD6CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N769D7USYT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UAlertIntentExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UAlertIntentExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.okrchv.ualerts.UAlertIntentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		503855752889766900930222 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -434,6 +635,8 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UAlert/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network usage required for debugging purposes ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -465,6 +668,8 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UAlert/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network usage required for debugging purposes ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,6 +747,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50177DDD28B3B8BC006AD6CD /* Build configuration list for PBXNativeTarget "UAlertIntentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50177DDE28B3B8BC006AD6CD /* Debug */,
+				50177DDF28B3B8BC006AD6CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		503855642889766600930222 /* Build configuration list for PBXProject "UAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -570,6 +784,47 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Pulse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50177DE128B3FDC6006AD6CD /* UkraineAlertAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UkraineAlertAPI;
+		};
+		5041AA76289AAB2300677DA5 /* UkraineAlertAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UkraineAlertAPI;
+		};
+		5041AA78289AAB6600677DA5 /* UkraineAlertAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UkraineAlertAPI;
+		};
+		50DDC004289C154A00E8E8E7 /* Pulse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = Pulse;
+		};
+		50DDC006289C154A00E8E8E7 /* PulseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = PulseCore;
+		};
+		50DDC008289C154A00E8E8E7 /* PulseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = PulseUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 503855612889766600930222 /* Project object */;
 }

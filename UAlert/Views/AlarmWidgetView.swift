@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct AlarmWidgetView: View {
-    var startDate: Date
+    var startDate: Date?
+    var regionName: String?
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 5) {
-                Text(LocalizedStringKey("Air \nalarm"))
+                Text(LocalizedStringKey("Air\nalarm"))
                     .font(.system(.caption, design: .rounded))
                     .kerning(1)
                     .fontWeight(.bold)
@@ -26,23 +27,27 @@ struct AlarmWidgetView: View {
             }
             Spacer()
             HStack(spacing: 5) {
-                Text("Київ")
-                    .fontWeight(.semibold)
-                    .font(.system(.caption2))
+                if let name = regionName {
+                    Text(name).fontWeight(.semibold)
+                } else {
+                    Text(LocalizedStringKey("N/A")).fontWeight(.semibold)
+                }
                 Image(systemName: "location.fill")
-                    .font(.system(.caption2))
-            }
+                    
+            }.font(.system(.caption2))
             Spacer()
-            Text(startDate, style: .timer)
+            Text(startDate!, style: .timer)
                 .font(
                     .system(.largeTitle, design: .rounded)
                         .monospacedDigit()
                 )
+                .allowsTightening(true)
+                .minimumScaleFactor(0.5)
             Spacer()
             HStack(spacing: 5) {
                 Image(systemName: "clock")
                     .font(.system(.caption))
-                Text(LocalizedStringKey("Started at \(Text(startDate, style: .time))"))
+                Text(LocalizedStringKey("Started at \(Text(startDate!, style: .time))"))
                     .font(.system(.caption))
                     .fontWeight(.semibold)
                     .fixedSize()
@@ -56,10 +61,10 @@ struct AlarmWidgetView: View {
     }
 }
 
-struct AlarmView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlarmWidgetView(startDate: Date())
-            .environment(\.locale, .init(identifier: "uk"))
-            .previewLayout(.fixed(width: 160, height: 160))
-    }
-}
+//struct AlarmView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AlarmWidgetView(startDate: Date())
+//            .environment(\.locale, .init(identifier: "uk"))
+//            .previewLayout(.fixed(width: 160, height: 160))
+//    }
+//}
