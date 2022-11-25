@@ -39,23 +39,18 @@ struct CalmWidgetView: View {
                     Text(LocalizedStringKey("N/A")).fontWeight(.semibold)
                 }
                 Image(systemName: "location.fill")
-                    
             }
             .font(.system(.caption2))
             Spacer()
             if let date = lastUpdate {
-                
                 if (date < invasionDate ) {
-                    
                     Text(LocalizedStringKey("out of data\nabout last alarm"))
                         .font(.system(.headline))
                         .fontWeight(.semibold)
                         .lineLimit(3)
                         .allowsTightening(true)
                         .minimumScaleFactor(0.5)
-                    
                 } else if (date < Calendar.current.startOfDay(for: Date.now)) {
-                        
                         Text(date..<Date.now, format: .components(style: .wide, fields: [.year, .month, .week, .day]))
                             .font(.system(.largeTitle, design: .rounded))
                             .foregroundColor(.primary)
@@ -68,9 +63,7 @@ struct CalmWidgetView: View {
                             .fixedSize()
                             .allowsTightening(true)
                             .minimumScaleFactor(0.5)
-                    
                 } else {
-                    
                     Text(date, format: .dateTime.hour().minute())
                         .font(.system(.title, design: .rounded))
                         .foregroundColor(.primary)
@@ -80,7 +73,6 @@ struct CalmWidgetView: View {
                         .lineLimit(1)
                         .allowsTightening(true)
                         .minimumScaleFactor(0.5)
-                    
                 }
             }
         }

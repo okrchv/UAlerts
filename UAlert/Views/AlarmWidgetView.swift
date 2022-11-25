@@ -33,8 +33,8 @@ struct AlarmWidgetView: View {
                     Text(LocalizedStringKey("N/A")).fontWeight(.semibold)
                 }
                 Image(systemName: "location.fill")
-                    
-            }.font(.system(.caption2))
+            }
+            .font(.system(.caption2))
             Spacer()
             Text(startDate!, style: .timer)
                 .font(
