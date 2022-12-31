@@ -13,39 +13,69 @@ typealias AlertMap = [AlertType: Int]
 typealias DayMap = [Date: AlertMap]
 
 struct AlertsChartView: View {
+    @State var completion = false
     @State var pollDays: [PollDay] = []
     
-    var regionID = "9"
+    var regionId: String
     var daysCount: Int = 7
 
     var body: some View {
-        VStack {
-            HStack {
-                ForEach(pollDays, id: \.date) { day in
-                    VStack(spacing: 0) {
-                        Spacer()
-                        ForEach(AlertType.allCases, id: \.rawValue) { type in
-                            if let count = day.alerts[type] {
-                                ZStack {
-                                    Rectangle()
-                                        .fill(barColors[type]!)
-                                        .frame(width: 20, height: CGFloat(count) * 20.0)
-                                    Text(String(count))
-                                      .font(.footnote)
-                                      .rotationEffect(.degrees(-90))
+        VStack(alignment: .center) {
+            
+            HStack(spacing: 5) {
+                Image(systemName: "chart.bar")
+                Text(LocalizedStringKey("Alerts statistics"))
+                    .textCase(.uppercase)
+                Spacer()
+            }
+            .font(.system(.footnote))
+            .padding(.horizontal, 15)
+            .padding(.vertical, 10)
+                        
+            VStack {
+                if completion == true {
+                    HStack(alignment: .bottom) {
+                        ForEach(pollDays, id: \.date) { day in
+                            VStack(spacing: 0) {
+                                ForEach(AlertType.allCases, id: \.rawValue) { type in
+                                    ZStack {
+                                        if day.alerts.isEmpty {
+                                            Rectangle()
+                                                .fill(Color.gray.opacity(0.3))
+                                                .frame(width: 25, height: 0.5)
+                                        } else if let count = day.alerts[type] {
+                                            Rectangle()
+                                                .fill(barColors[type]!)
+                                                .frame(width: 25, height: CGFloat(count) * 20.0)
+                                            Text(String(count))
+                                                .font(.system(.footnote))
+                                                .foregroundColor(Color.white)
+                                                .rotationEffect(.degrees(-90))
+                                        }
+                                    }
                                 }
+                                Text("\(day.date.formatted(.dateTime.weekday(.short)))")
+                                    .font(.footnote)
+                                    .frame(height: 20)
                             }
                         }
-                        Text("\(day.date.formatted(.dateTime.weekday(.short)))")
-                            .font(.footnote)
-                            .frame(height: 20)
                     }
+                } else {
+                    ProgressView()
+                        .padding()
                 }
             }
+            .padding(.horizontal, 15)
+            .padding(.vertical, 10)
         }
-        .task {
+        .background(.regularMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .task(id: regionId) {
+            completion = false
+            
             if let allAlertsHistory = await getAllAlertsHistory() {
-                pollDays = alertsHistoryToPollDays(allAlertsHistory, regionID, daysCount)
+                pollDays = alertsHistoryToPollDays(allAlertsHistory, regionId, daysCount)
+                completion = true
             }
         }
     }
@@ -53,7 +83,7 @@ struct AlertsChartView: View {
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertsChartView()
+        AlertsChartView(regionId: "9")
     }
 }
 
@@ -79,7 +109,7 @@ func alertsHistoryToPollDays(_ allAlertsHistory: [StateAlarmsHolder], _ regionID
 
     let todayStart = Calendar.current.startOfDay(for: Date.now)
     let endDate = Calendar.current.date(byAdding: .day, value: 1, to: todayStart)!
-    let startDate = Calendar.current.date(byAdding: .day, value: -1 * daysCount, to: endDate)!
+    let startDate = Calendar.current.date(byAdding: .day, value: -1 * daysCount - 1, to: endDate)!
     
     let dateInterval = DateInterval(start: startDate, end: endDate)
     
