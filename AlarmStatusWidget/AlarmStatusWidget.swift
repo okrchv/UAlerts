@@ -26,7 +26,7 @@ struct Provider: IntentTimelineProvider {
 
         completion(entry)
     }
-    
+
     func getTimeline(for configuration: AlarmStatusWidgetConfigIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
             let regionStatusResponse = try await Client.shared.send(Paths.alerts.regionID(configuration.region!.identifier!).get)

@@ -16,7 +16,7 @@ struct CalmWidgetView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 5) {
-                Text(LocalizedStringKey("Everything\nis calm"))
+                Text(LocalizedStringKey("All\ngood"))
                     .font(.system(.caption, design: .rounded))
                     .kerning(1)
                     .fontWeight(.bold)
