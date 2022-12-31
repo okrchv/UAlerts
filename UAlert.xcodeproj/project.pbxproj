@@ -37,9 +37,15 @@
 		5041AA75289AAAD800677DA5 /* UkraineAlertAPI in Resources */ = {isa = PBXBuildFile; fileRef = 5041AA73289AAAD800677DA5 /* UkraineAlertAPI */; };
 		5041AA77289AAB2300677DA5 /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5041AA76289AAB2300677DA5 /* UkraineAlertAPI */; };
 		5041AA79289AAB6600677DA5 /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5041AA78289AAB6600677DA5 /* UkraineAlertAPI */; };
+		505C5EFC2936871900EA57DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5EFB2936871900EA57DA /* SettingsView.swift */; };
+		505C5EFD2936871900EA57DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5EFB2936871900EA57DA /* SettingsView.swift */; };
+		505C5F062949177E00EA57DA /* NoRegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5F052949177E00EA57DA /* NoRegionView.swift */; };
+		505C5F082949E22200EA57DA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5F072949E22200EA57DA /* HomeScreenView.swift */; };
 		5063BE162901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
 		5063BE172901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
 		5063BE182901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
+		506459A3295A4DC100445CAC /* CalmCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506459A2295A4DC100445CAC /* CalmCounterView.swift */; };
+		506459A7295A54B200445CAC /* AlarmCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506459A6295A54B200445CAC /* AlarmCounterView.swift */; };
 		506A944629143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
 		506A944729143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
 		506A944829143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
@@ -104,7 +110,12 @@
 		5038559E288ED6FB00930222 /* AlarmWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmWidgetView.swift; sourceTree = "<group>"; };
 		503855A1288ED84300930222 /* CalmWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmWidgetView.swift; sourceTree = "<group>"; };
 		5041AA73289AAAD800677DA5 /* UkraineAlertAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UkraineAlertAPI; sourceTree = "<group>"; };
+		505C5EFB2936871900EA57DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		505C5F052949177E00EA57DA /* NoRegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRegionView.swift; sourceTree = "<group>"; };
+		505C5F072949E22200EA57DA /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		5063BE152901B15700B33D85 /* AlertsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsChartView.swift; sourceTree = "<group>"; };
+		506459A2295A4DC100445CAC /* CalmCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmCounterView.swift; sourceTree = "<group>"; };
+		506459A6295A54B200445CAC /* AlarmCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCounterView.swift; sourceTree = "<group>"; };
 		506A944529143F0800AEF641 /* PollDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollDay.swift; sourceTree = "<group>"; };
 		50DDC00A289C173100E8E8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,11 +232,13 @@
 		503855A4288EDAAE00930222 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5038559E288ED6FB00930222 /* AlarmWidgetView.swift */,
-				503855A1288ED84300930222 /* CalmWidgetView.swift */,
+				5064599F29521E3300445CAC /* WidgetViews */,
+				505C5F052949177E00EA57DA /* NoRegionView.swift */,
+				505C5F072949E22200EA57DA /* HomeScreenView.swift */,
+				506459A6295A54B200445CAC /* AlarmCounterView.swift */,
+				506459A2295A4DC100445CAC /* CalmCounterView.swift */,
+				505C5EFB2936871900EA57DA /* SettingsView.swift */,
 				5063BE152901B15700B33D85 /* AlertsChartView.swift */,
-				5038557A2889779D00930222 /* AlarmStatusWidgetView.swift */,
-				50177DE328C21583006AD6CD /* AlarmStatusMediumWidgetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +249,17 @@
 				5041AA73289AAAD800677DA5 /* UkraineAlertAPI */,
 			);
 			path = LocalPackages;
+			sourceTree = "<group>";
+		};
+		5064599F29521E3300445CAC /* WidgetViews */ = {
+			isa = PBXGroup;
+			children = (
+				5038559E288ED6FB00930222 /* AlarmWidgetView.swift */,
+				503855A1288ED84300930222 /* CalmWidgetView.swift */,
+				5038557A2889779D00930222 /* AlarmStatusWidgetView.swift */,
+				50177DE328C21583006AD6CD /* AlarmStatusMediumWidgetView.swift */,
+			);
+			path = WidgetViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,14 +424,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5038556F2889766600930222 /* ContentView.swift in Sources */,
+				506459A3295A4DC100445CAC /* CalmCounterView.swift in Sources */,
 				503855A2288ED84300930222 /* CalmWidgetView.swift in Sources */,
 				5038557B2889779D00930222 /* AlarmStatusWidgetView.swift in Sources */,
+				505C5F082949E22200EA57DA /* HomeScreenView.swift in Sources */,
 				5063BE162901B15700B33D85 /* AlertsChartView.swift in Sources */,
 				5038559F288ED6FB00930222 /* AlarmWidgetView.swift in Sources */,
 				50177DE428C21583006AD6CD /* AlarmStatusMediumWidgetView.swift in Sources */,
 				506A944629143F0800AEF641 /* PollDay.swift in Sources */,
+				505C5F062949177E00EA57DA /* NoRegionView.swift in Sources */,
 				50177DCC28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */,
 				5038556D2889766600930222 /* UAlertApp.swift in Sources */,
+				505C5EFC2936871900EA57DA /* SettingsView.swift in Sources */,
+				506459A7295A54B200445CAC /* AlarmCounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +447,7 @@
 				5038559C288DECB200930222 /* AlarmStatusWidgetView.swift in Sources */,
 				503855A0288ED6FB00930222 /* AlarmWidgetView.swift in Sources */,
 				506A944729143F0800AEF641 /* PollDay.swift in Sources */,
+				505C5EFD2936871900EA57DA /* SettingsView.swift in Sources */,
 				503855882889786900930222 /* AlarmStatusWidget.swift in Sources */,
 				5063BE172901B15700B33D85 /* AlertsChartView.swift in Sources */,
 				50177DCD28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */,
@@ -457,6 +487,7 @@
 		50177DDE28B3B8BC006AD6CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UAlertIntentExtension/UAlertIntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N769D7USYT;
@@ -482,6 +513,7 @@
 		50177DDF28B3B8BC006AD6CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = UAlertIntentExtension/UAlertIntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N769D7USYT;
@@ -629,6 +661,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = UAlert/UAlert.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UAlert/Preview Content\"";
@@ -640,7 +674,6 @@
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network usage required for debugging purposes ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -650,6 +683,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.okrchv.ualerts;
 				PRODUCT_NAME = UAlert;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -663,6 +697,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = UAlert/UAlert.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UAlert/Preview Content\"";
@@ -674,7 +710,6 @@
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Network usage required for debugging purposes ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -684,6 +719,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.okrchv.ualerts;
 				PRODUCT_NAME = UAlert;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

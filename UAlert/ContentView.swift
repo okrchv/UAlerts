@@ -10,13 +10,15 @@ import UkraineAlertAPI
 import WidgetKit
 
 struct ContentView: View {
+    @AppStorage("userRegionId") private var selectedRegion = ""
+    
     var body: some View {
-//        AlarmStatusWidgetView(status: .calm, startDate: Date(), lastDate: Date())
-//            .frame(width: 160, height: 160)
-//            .border(.blue, width: 1)
-        AlertsChartView()
+        if selectedRegion.isEmpty {
+            NoRegionView()
+        } else {
+            HomeScreenView()
+        }
     }
-        
 }
 
 struct ContentView_Previews: PreviewProvider {

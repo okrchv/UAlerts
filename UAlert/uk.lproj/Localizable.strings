@@ -7,10 +7,24 @@
 */
 "Air\nalarm" = "Повітряна\nтривога";
 "Started at %@" = "Початок %@";
-"Everything\nis calm" = "Все\nспокійно";
+"All\ngood" = "Все\nспокійно";
 "without air alarms" = "без тривог";
 "end of the last alarm" = "відбій останньої тривоги";
 "out of data\nabout last alarm" = "немає даних\nпро останню тривогу";
 "Shelters map" = "Мапа укриттів";
 "min to the nearest shelter" = "хв до найближчого укриття";
 "alarms\nnow in Ukraine" = "тривог\nзараз в Україні";
+"Change" = "Змінити";
+"No Region" = "Не вибрано";
+"Region" = "Регіон";
+"Notification Settings" = "Налаштування сповіщень";
+"Notifications" = "Сповіщення";
+"Settings" = "Налаштування";
+"Regions" = "Регіони";
+"UAlerts is unavailable" = "UAletrs недоступний";
+"Please select region to continue" = "Будь ласка виберіть регіон для продовження";
+"Select Region" = "Вибрати регіон";
+"There is no danger" = "Небезпека відсутня";
+"An emergency alert is active!" = "Оголошено сигнал тривоги!";
+"Alerts" = "Оповіщення";
+"Alerts statistics" = "Статистика тривог";
