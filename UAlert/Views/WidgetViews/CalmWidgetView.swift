@@ -43,15 +43,23 @@ struct CalmWidgetView: View {
             .font(.system(.caption2))
             Spacer()
             if let date = lastUpdate {
-                if (date < invasionDate ) {
+                // We consider all alert end dates before 24.02.2022 as anomalies
+                if (date < invasionDate) {
                     Text(LocalizedStringKey("out of data\nabout last alarm"))
                         .font(.system(.headline))
                         .fontWeight(.semibold)
                         .lineLimit(3)
                         .allowsTightening(true)
                         .minimumScaleFactor(0.5)
+                // We should display all dates for alerts which ended yesterday and earlier
+                // as day count starting with "1 day" if alert was ended yesterday
                 } else if (date < Calendar.current.startOfDay(for: Date.now)) {
-                        Text(date..<Date.now, format: .components(style: .wide, fields: [.year, .month, .week, .day]))
+                    
+                    let tomorrowStart = Calendar.current.startOfDay(
+                        for: Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!
+                    )
+                    
+                        Text(date..<tomorrowStart, format: .components(style: .wide, fields: [.year, .month, .week, .day]))
                             .font(.system(.largeTitle, design: .rounded))
                             .foregroundColor(.primary)
                             .lineLimit(1)
@@ -63,6 +71,7 @@ struct CalmWidgetView: View {
                             .fixedSize()
                             .allowsTightening(true)
                             .minimumScaleFactor(0.5)
+                // If alert was ended today we should display time when this event was happened
                 } else {
                     Text(date, format: .dateTime.hour().minute())
                         .font(.system(.title, design: .rounded))

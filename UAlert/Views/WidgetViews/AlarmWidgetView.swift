@@ -36,23 +36,35 @@ struct AlarmWidgetView: View {
             }
             .font(.system(.caption2))
             Spacer()
-            Text(startDate!, style: .timer)
-                .font(
-                    .system(.largeTitle, design: .rounded)
-                        .monospacedDigit()
-                )
-                .allowsTightening(true)
-                .minimumScaleFactor(0.5)
-            Spacer()
-            HStack(spacing: 5) {
-                Image(systemName: "clock")
-                    .font(.system(.caption))
-                Text(LocalizedStringKey("Started at \(Text(startDate!, style: .time))"))
-                    .font(.system(.caption))
-                    .fontWeight(.semibold)
-                    .fixedSize()
-                    .allowsTightening(true)
-                    .minimumScaleFactor(0.5)
+            if let date = startDate {
+                if (date < Calendar.current.date(byAdding: .day, value: -1, to: Date.now)!) {
+                    Text(date..<Date.now, format: .components(style: .wide, fields: [.day, .hour]))
+                        .font(
+                            .system(.largeTitle, design: .rounded)
+                                .monospacedDigit()
+                        )
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.5)
+                } else {
+                    Text(startDate!, style: .timer)
+                        .font(
+                            .system(.largeTitle, design: .rounded)
+                                .monospacedDigit()
+                        )
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.5)
+                    Spacer()
+                    HStack(spacing: 5) {
+                        Image(systemName: "clock")
+                            .font(.system(.caption))
+                        Text(LocalizedStringKey("Started at \(Text(startDate!, style: .time))"))
+                            .font(.system(.caption))
+                            .fontWeight(.semibold)
+                            .fixedSize()
+                            .allowsTightening(true)
+                            .minimumScaleFactor(0.5)
+                    }
+                }
             }
         }
         .padding()
