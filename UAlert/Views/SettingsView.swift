@@ -20,64 +20,111 @@ struct SelectRegionView: View {
 
     @State var allRegions: [SettingsRegion] = []
     @State var selected: SettingsRegion?
+    
+    @State var completion = false
+    @State private var searchText = ""
 
     var body: some View {
         VStack {
-            NavigationView {
-                List {
-                    ForEach(allRegions, id: \.self) { region in
-                        if let communities = region.childRegions {
-//                            NavigationLink(region.name) {
-//                                List {
-//                                    ForEach(communities, id: \.self) { community in
-//                                        Text(community.name)
-//                                    }
-//                                }
-//                                .navigationTitle("Communities")
-//                            }
-                            Section(header: Text(region.name)) {
-                                ForEach(communities, id: \.self) { community in
-                                    HStack {
-                                        Text(community.name)
-                                        Spacer()
-                                    }
-                                    .contentShape(Rectangle())
-                                    .listRowBackground((community.id == selected?.id) ? Color.gray.opacity(0.2) : Color.white.opacity(0.45))
-                                    .onTapGesture {
-                                        withAnimation {
-                                            selected = community
-                                            UserDefaults.standard.set(region.id, forKey: "userRegionIdState")
-                                            UserDefaults.standard.set(community.id, forKey: "userRegionId")
-                                            UserDefaults.standard.set(community.name, forKey: "userRegionName")
-                                            dismiss()
+            if completion == false {
+                ProgressView()
+            } else {
+                NavigationView {
+                    List {
+                        ForEach(filterRegionsByName(allRegions, searchText), id: \.self) { region in
+                            if let communities = region.childRegions {
+    //                            NavigationLink(region.name) {
+    //                                List {
+    //                                    ForEach(communities, id: \.self) { community in
+    //                                        Text(community.name)
+    //                                    }
+    //                                }
+    //                                .navigationTitle("Communities")
+    //                            }
+                                Section(header: Text(region.name)) {
+                                    ForEach(communities, id: \.self) { community in
+                                        HStack {
+                                            Text(community.name)
+                                            Spacer()
+                                        }
+                                        .contentShape(Rectangle())
+                                        .listRowBackground((community.id == selected?.id) ? Color.gray.opacity(0.2) : Color.white.opacity(0.45))
+                                        .onTapGesture {
+                                            withAnimation {
+                                                selected = community
+                                                UserDefaults.standard.set(region.id, forKey: "userRegionIdState")
+                                                UserDefaults.standard.set(community.id, forKey: "userRegionId")
+                                                UserDefaults.standard.set(community.name, forKey: "userRegionName")
+                                                dismiss()
+                                            }
                                         }
                                     }
                                 }
-                            }
-                        } else {
-                            HStack {
-                                Text(region.name)
-                                Spacer()
-                            }
-                            .contentShape(Rectangle())
-                            .listRowBackground((region.id == selected?.id) ? Color.gray.opacity(0.2) : Color.white.opacity(0.45))
-                            .onTapGesture {
-                                withAnimation {
-                                    selected = region
-                                    UserDefaults.standard.set(region.id, forKey: "userRegionIdState")
-                                    UserDefaults.standard.set(region.id, forKey: "userRegionId")
-                                    UserDefaults.standard.set(region.name, forKey: "userRegionName")
-                                    dismiss()
+                            } else {
+                                HStack {
+                                    Text(region.name)
+                                    Spacer()
+                                }
+                                .contentShape(Rectangle())
+                                .listRowBackground((region.id == selected?.id) ? Color.gray.opacity(0.2) : Color.white.opacity(0.45))
+                                .onTapGesture {
+                                    withAnimation {
+                                        selected = region
+                                        UserDefaults.standard.set(region.id, forKey: "userRegionIdState")
+                                        UserDefaults.standard.set(region.id, forKey: "userRegionId")
+                                        UserDefaults.standard.set(region.name, forKey: "userRegionName")
+                                        dismiss()
+                                    }
                                 }
                             }
                         }
+                        .navigationBarTitle(LocalizedStringKey("Regions"))
                     }
-                    .navigationBarTitle(LocalizedStringKey("Regions"))
+                
                 }
+                .searchable(text: $searchText)
             }
         }
         .task {
+            completion = false
             allRegions = await getAllRegions()
+            completion = true
+        }
+    }
+}
+
+func filterRegionsByName(_ regions: [SettingsRegion], _ searchText: String) -> [SettingsRegion] {
+    let compareText = searchText.trimmingCharacters(in: .whitespaces)
+    
+    if searchText.isEmpty  {
+        return regions
+    }
+    
+    return regions.compactMap { region in
+        if let childRegions = region.childRegions {
+            let filteredChildRegions = childRegions.filter({ region in
+                return region.name
+                    .replacingOccurrences(of: "територіальна громада", with: "")
+                    .localizedCaseInsensitiveContains(compareText)
+            })
+            
+            if !filteredChildRegions.isEmpty {
+                return SettingsRegion(
+                    id: region.id,
+                    name: region.name,
+                    childRegions: filteredChildRegions
+                )
+            } else {
+                return nil
+            }
+
+        } else {
+            // Kyiv etc
+            if region.name.localizedCaseInsensitiveContains(compareText) {
+                return region
+            } else {
+                return nil
+            }
         }
     }
 }
