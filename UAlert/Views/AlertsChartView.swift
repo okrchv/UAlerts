@@ -34,7 +34,7 @@ struct AlertsChartView: View {
                         
             VStack {
                 if completion == true {
-                    HStack(alignment: .bottom) {
+                    HStack(alignment: .bottom, spacing: 10) {
                         ForEach(pollDays, id: \.date) { day in
                             VStack(spacing: 0) {
                                 ForEach(AlertType.allCases, id: \.rawValue) { type in
