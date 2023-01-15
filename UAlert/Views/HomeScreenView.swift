@@ -12,6 +12,8 @@ struct HomeScreenView: View {
     @AppStorage("userRegionIdState") private var selectedRegionState = ""
     @AppStorage("userRegionId") private var selectedRegion = ""
     @AppStorage("userRegionName") private var regionName = ""
+    
+    @EnvironmentObject private var appDelegate: AppDelegate
 
     @State var completion = false
     @State var status: [UkraineAlertAPI.Alert] = []
@@ -62,6 +64,10 @@ struct HomeScreenView: View {
                 }
                 .task(id: selectedRegion) {
                     completion = false
+
+                    appDelegate.setRegionId(selectedRegion)
+                    appDelegate.registerForPushNotifications()
+
                     if let region = await getRegionStatus(selectedRegion) {
                         status = region.activeAlerts ?? []
                         lastUpdate = region.lastUpdate

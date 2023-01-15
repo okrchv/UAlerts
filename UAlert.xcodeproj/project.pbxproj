@@ -117,6 +117,7 @@
 		506459A2295A4DC100445CAC /* CalmCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmCounterView.swift; sourceTree = "<group>"; };
 		506459A6295A54B200445CAC /* AlarmCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCounterView.swift; sourceTree = "<group>"; };
 		506A944529143F0800AEF641 /* PollDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollDay.swift; sourceTree = "<group>"; };
+		509E7CB129702DAE00633BE5 /* UAlert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UAlert.entitlements; sourceTree = "<group>"; };
 		50DDC00A289C173100E8E8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +190,7 @@
 		5038556B2889766600930222 /* UAlert */ = {
 			isa = PBXGroup;
 			children = (
+				509E7CB129702DAE00633BE5 /* UAlert.entitlements */,
 				50DDC00A289C173100E8E8E7 /* Info.plist */,
 				5038556C2889766600930222 /* UAlertApp.swift */,
 				5038556E2889766600930222 /* ContentView.swift */,
@@ -659,6 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = UAlert/UAlert.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -695,6 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = UAlert/UAlert.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
