@@ -26,7 +26,7 @@ struct UAlertApp: App {
 }
 
 struct DeviceRegistrationRequest: Encodable {
-    var deviceId: String
+    var deviceToken: String
     var regionId: String
 }
 
@@ -54,7 +54,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
         
         Task {
             let client = APIClient(baseURL: URL(string: "https://d051112ad970a7c3bc341f0a013832d3.m.pipedream.net"))
-            let request = Request<Void>(method: "POST", path: "/", body: DeviceRegistrationRequest(deviceId: deviceToken.base64EncodedString(), regionId: self.regionId ?? ""))
+            let request = Request<Void>(method: "POST", path: "/", body: DeviceRegistrationRequest(deviceToken: deviceToken.base64EncodedString(), regionId: self.regionId ?? ""))
 
             try await client.send(request)
             print("Successfully registered device for notifications!")
