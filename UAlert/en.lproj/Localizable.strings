@@ -5,3 +5,11 @@
   Created by Oleh Kiurchev on 24.07.2022.
   
 */
+
+"%@ UNKNOWN" = "%@ Unknown type of danger";
+"%@ AIR" = "%@ Air danger";
+"%@ ARTILLERY" = "%@ Danger of artillery shelling";
+"%@ URBAN_FIGHTS" = "%@ Urban fights";
+"%@ CHEMICAL" = "%@ Chemical hazard";
+"%@ NUCLEAR" = "%@ Nuclear hazard";
+"%@ INFO" = "%@ Info alert";
