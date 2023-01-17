@@ -5,8 +5,8 @@
 //  Created by Oleh Kiurchev on 29.11.2022.
 //
 
-import UkraineAlertAPI
 import SwiftUI
+import UkraineAlertAPI
 
 struct SettingsRegion: Hashable {
     var id: String
@@ -15,9 +15,11 @@ struct SettingsRegion: Hashable {
 }
 
 struct SelectRegionView: View {
+    @EnvironmentObject private var appDelegate: AppDelegate
+
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
-
+    
     @State var allRegions: [SettingsRegion] = []
     @State var selected: SettingsRegion?
     
@@ -33,14 +35,6 @@ struct SelectRegionView: View {
                     List {
                         ForEach(filterRegionsByName(allRegions, searchText), id: \.self) { region in
                             if let communities = region.childRegions {
-    //                            NavigationLink(region.name) {
-    //                                List {
-    //                                    ForEach(communities, id: \.self) { community in
-    //                                        Text(community.name)
-    //                                    }
-    //                                }
-    //                                .navigationTitle("Communities")
-    //                            }
                                 Section(header: Text(region.name)) {
                                     ForEach(communities, id: \.self) { community in
                                         HStack {
@@ -55,7 +49,11 @@ struct SelectRegionView: View {
                                                 UserDefaults.standard.set(region.id, forKey: "userRegionIdState")
                                                 UserDefaults.standard.set(community.id, forKey: "userRegionId")
                                                 UserDefaults.standard.set(community.name, forKey: "userRegionName")
-                                                dismiss()
+ 
+                                                Task {
+                                                    await appDelegate.registerForPushNotifications(community.id)
+                                                    dismiss()
+                                                }
                                             }
                                         }
                                     }
@@ -73,7 +71,11 @@ struct SelectRegionView: View {
                                         UserDefaults.standard.set(region.id, forKey: "userRegionIdState")
                                         UserDefaults.standard.set(region.id, forKey: "userRegionId")
                                         UserDefaults.standard.set(region.name, forKey: "userRegionName")
-                                        dismiss()
+                                        
+                                        Task {
+                                            await appDelegate.registerForPushNotifications(region.id)
+                                            dismiss()
+                                        }
                                     }
                                 }
                             }

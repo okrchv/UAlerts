@@ -9,12 +9,12 @@ import SwiftUI
 import UkraineAlertAPI
 
 struct HomeScreenView: View {
+    @EnvironmentObject private var appDelegate: AppDelegate
+
     @AppStorage("userRegionIdState") private var selectedRegionState = ""
     @AppStorage("userRegionId") private var selectedRegion = ""
     @AppStorage("userRegionName") private var regionName = ""
     
-    @EnvironmentObject private var appDelegate: AppDelegate
-
     @State var completion = false
     @State var status: [UkraineAlertAPI.Alert] = []
     @State var lastUpdate: Date?
@@ -65,15 +65,16 @@ struct HomeScreenView: View {
                 .task(id: selectedRegion) {
                     completion = false
 
-                    appDelegate.setRegionId(selectedRegion)
-                    appDelegate.registerForPushNotifications()
-
                     if let region = await getRegionStatus(selectedRegion) {
                         status = region.activeAlerts ?? []
                         lastUpdate = region.lastUpdate
                         completion = true
                     }
                 }
+                .task {
+                    await appDelegate.registerForPushNotifications(selectedRegion)
+                }
+
                 HStack {
                     HStack(spacing: 5) {
                         Text(regionName.replacingOccurrences(of: "територіальна громада", with: "ТГ"))

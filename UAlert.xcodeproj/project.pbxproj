@@ -38,7 +38,6 @@
 		5041AA77289AAB2300677DA5 /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5041AA76289AAB2300677DA5 /* UkraineAlertAPI */; };
 		5041AA79289AAB6600677DA5 /* UkraineAlertAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5041AA78289AAB6600677DA5 /* UkraineAlertAPI */; };
 		505C5EFC2936871900EA57DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5EFB2936871900EA57DA /* SettingsView.swift */; };
-		505C5EFD2936871900EA57DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5EFB2936871900EA57DA /* SettingsView.swift */; };
 		505C5F062949177E00EA57DA /* NoRegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5F052949177E00EA57DA /* NoRegionView.swift */; };
 		505C5F082949E22200EA57DA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C5F072949E22200EA57DA /* HomeScreenView.swift */; };
 		5063BE162901B15700B33D85 /* AlertsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5063BE152901B15700B33D85 /* AlertsChartView.swift */; };
@@ -49,9 +48,7 @@
 		506A944629143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
 		506A944729143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
 		506A944829143F0800AEF641 /* PollDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A944529143F0800AEF641 /* PollDay.swift */; };
-		50DDC005289C154A00E8E8E7 /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 50DDC004289C154A00E8E8E7 /* Pulse */; };
-		50DDC007289C154A00E8E8E7 /* PulseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 50DDC006289C154A00E8E8E7 /* PulseCore */; };
-		50DDC009289C154A00E8E8E7 /* PulseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50DDC008289C154A00E8E8E7 /* PulseUI */; };
+		509E7CB4297623CE00633BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E7CB3297623CE00633BE5 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +115,7 @@
 		506459A6295A54B200445CAC /* AlarmCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCounterView.swift; sourceTree = "<group>"; };
 		506A944529143F0800AEF641 /* PollDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollDay.swift; sourceTree = "<group>"; };
 		509E7CB129702DAE00633BE5 /* UAlert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UAlert.entitlements; sourceTree = "<group>"; };
+		509E7CB3297623CE00633BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50DDC00A289C173100E8E8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +188,7 @@
 				509E7CB129702DAE00633BE5 /* UAlert.entitlements */,
 				50DDC00A289C173100E8E8E7 /* Info.plist */,
 				5038556C2889766600930222 /* UAlertApp.swift */,
+				509E7CB3297623CE00633BE5 /* AppDelegate.swift */,
 				5038556E2889766600930222 /* ContentView.swift */,
 				506A944529143F0800AEF641 /* PollDay.swift */,
 				503855A4288EDAAE00930222 /* Views */,
@@ -421,6 +420,7 @@
 				5038556F2889766600930222 /* ContentView.swift in Sources */,
 				506459A3295A4DC100445CAC /* CalmCounterView.swift in Sources */,
 				503855A2288ED84300930222 /* CalmWidgetView.swift in Sources */,
+				509E7CB4297623CE00633BE5 /* AppDelegate.swift in Sources */,
 				5038557B2889779D00930222 /* AlarmStatusWidgetView.swift in Sources */,
 				505C5F082949E22200EA57DA /* HomeScreenView.swift in Sources */,
 				5063BE162901B15700B33D85 /* AlertsChartView.swift in Sources */,
@@ -442,7 +442,6 @@
 				5038559C288DECB200930222 /* AlarmStatusWidgetView.swift in Sources */,
 				503855A0288ED6FB00930222 /* AlarmWidgetView.swift in Sources */,
 				506A944729143F0800AEF641 /* PollDay.swift in Sources */,
-				505C5EFD2936871900EA57DA /* SettingsView.swift in Sources */,
 				503855882889786900930222 /* AlarmStatusWidget.swift in Sources */,
 				5063BE172901B15700B33D85 /* AlertsChartView.swift in Sources */,
 				50177DCD28AE63E2006AD6CD /* AlarmStatusWidgetConfig.intentdefinition in Sources */,
