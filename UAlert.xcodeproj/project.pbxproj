@@ -135,9 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DDC007289C154A00E8E8E7 /* PulseCore in Frameworks */,
-				50DDC005289C154A00E8E8E7 /* Pulse in Frameworks */,
-				50DDC009289C154A00E8E8E7 /* PulseUI in Frameworks */,
 				5041AA77289AAB2300677DA5 /* UkraineAlertAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,9 +302,6 @@
 			name = UAlert;
 			packageProductDependencies = (
 				5041AA76289AAB2300677DA5 /* UkraineAlertAPI */,
-				50DDC004289C154A00E8E8E7 /* Pulse */,
-				50DDC006289C154A00E8E8E7 /* PulseCore */,
-				50DDC008289C154A00E8E8E7 /* PulseUI */,
 			);
 			productName = "Air-raid Alarm";
 			productReference = 503855692889766600930222 /* UAlert.app */;
@@ -365,7 +359,6 @@
 			);
 			mainGroup = 503855602889766600930222;
 			packageReferences = (
-				50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */,
 			);
 			productRefGroup = 5038556A2889766600930222 /* Products */;
 			projectDirPath = "";
@@ -825,17 +818,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kean/Pulse";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		50177DE128B3FDC6006AD6CD /* UkraineAlertAPI */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -848,21 +830,6 @@
 		5041AA78289AAB6600677DA5 /* UkraineAlertAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UkraineAlertAPI;
-		};
-		50DDC004289C154A00E8E8E7 /* Pulse */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */;
-			productName = Pulse;
-		};
-		50DDC006289C154A00E8E8E7 /* PulseCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */;
-			productName = PulseCore;
-		};
-		50DDC008289C154A00E8E8E7 /* PulseUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 50DDC003289C154A00E8E8E7 /* XCRemoteSwiftPackageReference "Pulse" */;
-			productName = PulseUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
